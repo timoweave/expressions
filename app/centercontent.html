@@ -1,0 +1,73 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="toggle_left_menu()">
+            <md-icon md-font-set="material-icons">menu</md-icon>
+        </md-button>
+        {{title}}
+    </div>
+</md-toolbar>
+
+<div layout="column" layout-fill>
+
+    <md-button class="md-icon-button" ng-click="toggle_profile_edit()" style="z-index:2; position: absolute; top: 10px; right: 10px;">
+        <md-icon md-font-set="material-icons">add_circle</md-icon>
+    </md-button>
+    
+    <md-card layout-fill ng-show="show_profile_form">
+        <md-card-title>create profile</md-card-title>
+        <md-card-content>
+
+            <form name="expressionForm">
+                <md-input-container layout-fill>
+                    <label>Name</label>
+                    <input name="name" ng-model="name" required>
+                    <div ng-messages="expressionForm.name.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container layout-fill>                
+                    <label>City</label>
+                    <input name="city" ng-model="city" required>
+                    <div ng-messages="expressionForm.city.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+                
+                <md-input-container layout-fill>
+                    <label>City</label>
+                    <input name="bio" ng-model="bio" required>
+                    <div ng-messages="expressionForm.bio.$error">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+            </form>
+        </md-card-content>
+        <md-card-action>
+            <md-button><md-icon md-font-set="material-icons">add_circle</md-icon></md-button>
+        </md-card-action>
+    </md-card>
+</div>
+
+<div layout="row" layout-wrap>
+    
+    <md-card ng-repeat="person in people" style="width:30%;" flex="noshrink" >
+        <img alt="img" ng-src="{{person.img}}"/>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline" >{{person.name}}</span>
+                <span class="md-subhead">{{person.city}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        
+        <md-card-content>
+            {{person.bio}}
+        </md-card-content>
+        
+        <md-card-actions layout="row" layout-align="start center">
+            <span flex></span>
+            <md-button><md-icon md-font-set="material-icons">favorite</md-icon></md-button>
+            <md-button><md-icon md-font-set="material-icons">chat_bubble</md-icon></md-button>
+        </md-card-actions>
+    </md-card>
+</div>

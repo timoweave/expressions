@@ -13,61 +13,16 @@
         <!--
             <link href="../bower_components/angular-material-icons/angular-material-icons.css" rel="stylesheet"/>
             -->
-        <link href="./assets/app.css" rel="stylesheet"/>
+        <link href="./app.css" rel="stylesheet"/>
         <!-- 
              <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
              -->
     </head>
     
     <body ng-app="expressionApp" ng-cloak>
-
         <div ng-controller="browsingCntrl">
-
-            <md-sidenav md-component-id="left_menu" class="md-sidenav-left">
-                <md-list>
-                    <md-list-item ng-repeat="nav in navs">
-                        <md-button class="md-icon-button"
-                                   style="width:100%; text-align:left; padding-left:10px;"
-                                   ng-click="">
-                            <md-icon md-font-set="material-icons">{{nav.icon}}</md-icon>
-                            <span style="padding-left:10px;">{{nav.label}}</span>
-                        </md-button>
-                    </md-list-item>
-                </md-list>
-                
-            </md-sidenav>
-            
-            <md-toolbar color="primary">
-                <div class="md-toolbar-tools">
-                    <md-button class="md-icon-button" ng-click="toggle_left_menu()">
-                        <md-icon md-font-set="material-icons">menu</md-icon>
-                    </md-button>
-                    {{title}}
-                </div>
-            </md-toolbar>
-
-            <div layout="row" layout-wrap>
-
-                <md-card ng-repeat="person in people" style="width:30%;" flex="noshrink" >
-                    <img alt="img" ng-src="{{person.img}}"/>
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline" >{{person.name}}</span>
-                            <span class="md-subhead">{{person.city}}</span>
-                        </md-card-title-text>
-                    </md-card-title>
-
-                    <md-card-content>
-                        {{person.bio}}
-                    </md-card-content>
-                    
-                    <md-card-actions layout="row" layout-align="start center">
-                        <span flex></span>
-                        <md-button><md-icon md-font-set="material-icons">favorite</md-icon></md-button>
-                        <md-button><md-icon md-font-set="material-icons">chat_bubble</md-icon></md-button>
-                    </md-card-actions>
-                </md-card>
-            </div>
+            <ng-include src="'./sidemenu.html'"></ng-include>
+            <ng-include src="'./centercontent.html'"></ng-include>
         </div>
         
         <div>

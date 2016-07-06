@@ -3,8 +3,13 @@ angular.module("expressionApp", ["ngMaterial"])
 .controller("browsingCntrl", ["$scope", "$mdSidenav", browsingCntrl])
 ;
 
-function browsingCntrl($scope, $mdSidenav) {
+function browsingCntrl($scope, $mdSidenav)
+{
   $scope.title = "Expressions";
+  $scope.show_profile_form = false;
+  $scope.toggle_profile_edit = function() {
+    $scope.show_profile_form = !$scope.show_profile_form;
+  }
   $scope.toggle_left_menu = function() {
     $mdSidenav('left_menu').toggle();
   };

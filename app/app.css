@@ -1,0 +1,26 @@
+ 
+html, body {
+    font-family: sans-serif;
+    font-size : 14px;
+    height : 100%;
+    margin : 0px;
+    padding : 0px;
+}
+
+md-toolbar h1 {
+    font-size : 1.250em;
+    font-weight: 400;
+    margin : auto;
+}
+
+md-tollbar .md-toolbar-tools h1 {
+    font-size : 1.250em;
+    font-weight : 400;
+    margin: auto !important;
+}
+
+#content {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+}

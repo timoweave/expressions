@@ -1,0 +1,14 @@
+<md-sidenav md-component-id="left_menu" class="md-sidenav-left">
+    <md-list>
+        <md-list-item ng-repeat="nav in navs">
+            <md-button class="md-icon-button"
+                       style="width:100%; text-align:left; padding-left:10px;"
+                       ng-click="">
+                <md-icon md-font-set="material-icons">{{nav.icon}}</md-icon>
+                <span style="padding-left:10px;">{{nav.label}}</span>
+            </md-button>
+        </md-list-item>
+    </md-list>
+    
+</md-sidenav>
+
